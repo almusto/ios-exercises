@@ -28,7 +28,7 @@
                                                                      withString:@""];
     
         //ANOTHER ALTENRATIVE BELOW 
-        //return [cheeseName stringByReplacingOccurrencesOfString:@" cheese" withString:@""];
+        //return [[cheeseName lowercaseString] stringByReplacingOccurrencesOfString:@" cheese" withString:@""];
         
     } else {
         /* WORK HERE, ASSUMING `cheeseName` DOES NOT END WITH " cheese" */
