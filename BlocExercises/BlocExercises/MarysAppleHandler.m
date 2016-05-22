@@ -12,8 +12,28 @@
 
 - (NSString *) itemMaryCanPurchaseForDollars:(NSInteger)dollars {
     NSString *itemToReturn;
-
-    /* WORK HERE */
+    
+    NSString *item;
+    NSString *getOut = @"get out of my store";
+    NSString *have = @"have ";
+    
+    if (dollars <= 4) {
+        return getOut;
+    } else if (dollars == 5) {
+        item = @"some gum";
+        return [have stringByAppendingString:item];
+    } else if (dollars == 6) {
+        item = @"an apple";
+        return [have stringByAppendingString:item];
+    } else if (dollars == 1000) {
+        item = @"an Apple computer";
+        return [have stringByAppendingString:item];
+    } else if (dollars == 1000000000){
+        item = @"The Big Apple";
+        return [have stringByAppendingString:item];
+    } else {
+        return @"No Corret Value Input";
+    }
     
     NSLog(@"For $%ld, Mary can: %@", (long)dollars, itemToReturn);
     return itemToReturn;
@@ -22,11 +42,9 @@
 - (NSUInteger) dollarCostForAppleFlavoredVodka {
     /* WORK HERE */
 
-    NSUInteger cost = 24;
+    NSUInteger cost = (self.getsDiscount) ? 18 : 24;
     
-    if (self.getsDiscount) {
-        cost *= .75;
-    }
+  
     
     return cost;
 }
