@@ -17,23 +17,25 @@
     NSString *getOut = @"get out of my store";
     NSString *have = @"have ";
     
+    
+    
+    
     if (dollars <= 4) {
         return getOut;
     } else if (dollars == 5) {
         item = @"some gum";
         return [have stringByAppendingString:item];
-    } else if (dollars == 6) {
+    } else if (dollars >= 6 && dollars < 1000) {
         item = @"an apple";
         return [have stringByAppendingString:item];
-    } else if (dollars == 1000) {
+    } else if (dollars >= 1000 && dollars < 1000000000) {
         item = @"an Apple computer";
         return [have stringByAppendingString:item];
-    } else if (dollars == 1000000000){
+    } else {
         item = @"The Big Apple";
         return [have stringByAppendingString:item];
-    } else {
-        return @"No Corret Value Input";
     }
+    
     
     NSLog(@"For $%ld, Mary can: %@", (long)dollars, itemToReturn);
     return itemToReturn;
