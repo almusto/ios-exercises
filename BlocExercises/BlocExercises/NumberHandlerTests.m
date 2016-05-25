@@ -45,7 +45,7 @@
     XCTAssertEqual(lowestNumber, -4, @"Lowest number should be -4.");
 
     lowestNumber = [self.handler lowestNumberInArray:@[@83, @124, @422, @953, @1004, @9532, @-1000]];
-    XCTAssertEqual(lowestNumber, -1000, @"Lowest number should be -1000.");    
+    XCTAssertEqual(lowestNumber, -1000, @"Lowest number should be -1000.");
 }
 
 - (void) testThatNumberDoublingWorks {
