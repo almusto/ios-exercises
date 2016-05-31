@@ -8,6 +8,7 @@ Strings
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
     // WORK HERE
+    let cheese = "My favorite cheese is \(cheese)."
     return cheese
 }
 
@@ -20,11 +21,15 @@ Arrays & Dictionaries
 
 */
 
-let numberArray = [1, 2, 3, 4]
+var numberArray = [1, 2, 3, 4]
+numberArray += [5]
 // Add 5 to this array
 // WORK HERE
 
-let numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
+var numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
+numberDictionary[5]  = "five"
+print(numberDictionary)
+
 // Add 5 : "five" to this dictionary
 // WORK HERE
 
@@ -113,3 +118,11 @@ let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All
 
 // Use a closure to sort this array alphabetically
 // WORK HERE
+let sortedArray = cerealArray.sort(>)
+let mappedArray = cerealArray.map{$0 == "Trix"}
+print (sortedArray)
+print (mappedArray)
+
+
+
+
