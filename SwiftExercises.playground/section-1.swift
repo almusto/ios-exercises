@@ -12,8 +12,9 @@ func favoriteCheeseStringWithCheese(cheese: String) -> String {
     return cheese
 }
 
-let fullSentence = favoriteCheeseStringWithCheese("cheddar")
+let fullSentence = favoriteCheeseStringWithCheese(cheese: "cheddar")
 // Make fullSentence say "My favorite cheese is cheddar."
+
 
 /*
 
@@ -28,10 +29,14 @@ numberArray += [5]
 
 var numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
 numberDictionary[5]  = "five"
+
 print(numberDictionary)
 
 // Add 5 : "five" to this dictionary
 // WORK HERE
+
+
+
 
 /*
 
@@ -42,8 +47,23 @@ Loops
 // Use a closed range loop to print 1 - 10, inclusively
 // WORK HERE
 
+var numberRange = ""
+for number in 1...10 {
+  numberRange = numberRange + String(number)
+}
+numberRange
+
+
+
 // Use a half-closed range loop to print 1 - 10, inclusively
 // WORK HERE
+
+var numberRange2 = ""
+for number in 1..<11 {
+  numberRange2 = numberRange2 + String(number)
+}
+numberRange2
+
 
 let worf = [
     "name": "Worf",
@@ -63,10 +83,16 @@ let characters = [worf, picard]
 func favoriteDrinksArrayForCharacters(characters:[[String : String]]) -> [String] {
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
     // WORK HERE
-    return []
+  var favoriteDrinks = [String]()
+  for character in characters {
+    if let drink = character["favorite drink"]{
+      favoriteDrinks.append(drink)
+    }
+  }
+  return favoriteDrinks
 }
 
-let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
+let favoriteDrinks = favoriteDrinksArrayForCharacters(characters: characters)
 
 favoriteDrinks
 
@@ -80,7 +106,13 @@ func emailFromUserDict(userDict : [String : String]) -> String {
     // Return the user's email address from userDict, or return "" if they don't have one
     
     // WORK HERE
-    return "user@example.com"
+  var userEmail : String
+  if userDict["email"] != nil{
+    userEmail = userDict["email"]!
+  } else {
+    userEmail = ""
+  }
+  return userEmail
 }
 
 
@@ -91,8 +123,8 @@ let marjorieBrowneUser = ["name" : "Marjorie Lee Browne", "occupation" : "Mathem
 
 // If your emailFromUserDict function is implemented correctly, both of these should output "true":
 
-emailFromUserDict(mostafaElSayedUser) == "mael-sayed@gatech.edu"
-emailFromUserDict(marjorieBrowneUser) == ""
+emailFromUserDict(userDict: mostafaElSayedUser) == "mael-sayed@gatech.edu"
+emailFromUserDict(userDict: marjorieBrowneUser) == ""
 
 /*
 
@@ -106,6 +138,16 @@ let strings = ["milk", "eggs", "bread", "challah"]
 
 // WORK HERE - make your function and pass `strings` in
 
+func arrayToString(stringArray:[String]) -> String {
+
+
+  let string = stringArray.joined(separator: ";")
+
+  return string
+}
+
+arrayToString(stringArray: strings)
+
 let expectedOutput = "milk;eggs;bread;challah"
 
 /*
@@ -118,7 +160,7 @@ let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All
 
 // Use a closure to sort this array alphabetically
 // WORK HERE
-let sortedArray = cerealArray.sort(>)
+let sortedArray = cerealArray.sorted(by: >)
 let mappedArray = cerealArray.map{$0 == "Trix"}
 print (sortedArray)
 print (mappedArray)
